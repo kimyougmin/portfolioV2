@@ -5,7 +5,7 @@ import Intro from "./components/Intro.tsx";
 function App() {
 
   return (
-    <div className="w-[430px] h-[932px] top-0">
+    <div className="w-full top-0">
       <Intro />
     </div>
   )
