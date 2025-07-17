@@ -4,7 +4,7 @@ interface NavigationButtonProps {
 }
 function NavigationButton({title, isSelected}: NavigationButtonProps) {
   return (
-    <p className={`${isSelected ? "text-black9" : "text-black3"} text-left mb-1 text-5xl font-bold`}>{title}</p>
+    <p className={`${isSelected ? "text-black9" : "text-black3"} text-left mb-1 text-xl sm:text-5xl font-bold`}>{title}</p>
   );
 }
 
