@@ -4,7 +4,7 @@ import SkillType from "../molecule/SkillType.tsx";
 
 function AboutMe() {
   return (
-    <div className="grid gap-16">
+    <div className="grid gap-16 pb-[20rem]">
       <div>
         <TitleWhite text={"Certificate"}/>
         <p className="bg-[#FEFCEE] text-black2 p-1 px-4 font-bold rounded-lg w-fit">정보처리기사</p>
