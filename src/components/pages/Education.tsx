@@ -2,7 +2,7 @@ import EducationCard from "../molecule/EducationCard.tsx";
 
 function Education() {
   return (
-    <div className="flex flex-wrap gap-4 w-full sm:pb-[42rem] ">
+    <div id={"education"} className="flex flex-wrap gap-4 w-full sm:pb-[50rem] ">
       <EducationCard
         title="데브코스: 클라우드기반 프론트엔드 엔지니어링"
         description="프로그래머스 (주)그렙의 부트캠프 교육과정 수료"

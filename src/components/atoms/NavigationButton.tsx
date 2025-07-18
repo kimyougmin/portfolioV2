@@ -1,10 +1,37 @@
+import type {SectionType} from "../../App.tsx";
+
+
 interface NavigationButtonProps {
-  title: "About Me" | "Projects" | "Education";
+  title: SectionType;
   isSelected: boolean;
+  onClick: () => void;
 }
-function NavigationButton({title, isSelected}: NavigationButtonProps) {
+
+function NavigationButton({ title, isSelected, onClick }: NavigationButtonProps) {
+  const scrollToSection = () => {
+    const idMap: Record<SectionType, string> = {
+      "About Me": "about",
+      "Projects": "projects",
+      "Education": "education"
+    };
+
+    const section = document.getElementById(idMap[title]);
+    if (section) {
+      window.scrollTo({
+        top: section.offsetTop - 64,
+        behavior: "smooth"
+      });
+    }
+    onClick();
+  };
+
   return (
-    <p className={`${isSelected ? "text-black9" : "text-black3"} text-left mb-1 text-xl sm:text-5xl font-bold`}>{title}</p>
+    <p
+      onClick={scrollToSection}
+      className={`cursor-pointer ${isSelected ? "text-black9" : "text-black3"} text-left mb-1 text-xl sm:text-5xl font-bold`}
+    >
+      {title}
+    </p>
   );
 }
 
