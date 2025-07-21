@@ -1,9 +1,8 @@
-export interface SkillIconProps {
-  type: "ts" | "react" | "next" | "vue" | "node" | "mysql" | "mongo" | "postgresql" | "nginx" | "jenkins" | "docker";
-}
-function SkillIcon({type}: SkillIconProps) {
+import type {SkillType} from "../../types/SkillType.ts";
+
+function SkillIcon({type, color}: SkillType) {
   return (
-    <div className="bg-[#070707] rounded-lg justify-items-center content-center w-[70px] h-[70px] ">
+    <div className={`bg-[${color}] rounded-lg justify-items-center content-center w-[70px] h-[70px] `}>
       <img src={`/public/skillIcons/${type}.png`} />
     </div>
   );
