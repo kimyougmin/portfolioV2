@@ -16,9 +16,9 @@ function AboutMe() {
       <div>
         <TitleWhite text={"Skill"}/>
         <div className="flex gap-16 flex-wrap">
-          <SkillType type={"FrontEnd"}/>
-          <SkillType type={"BackEnd & DB"}/>
-          <SkillType type={"DevOps"}/>
+          <SkillType type={"FrontEnd"} color={"#070707"}/>
+          <SkillType type={"BackEnd & DB"} color={"#070707"}/>
+          <SkillType type={"DevOps"} color={"#070707"}/>
         </div>
       </div>
     </div>

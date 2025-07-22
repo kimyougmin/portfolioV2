@@ -6,6 +6,7 @@ import NavigationBar from "./components/molecule/NavigationBar.tsx";
 import Projects from "./components/pages/Projects.tsx";
 import Education from "./components/pages/Education.tsx";
 import Footer from "./components/pages/Footer.tsx";
+import DetailProject from "./components/pages/DetailProject.tsx";
 
 export type SectionType = "About Me" | "Projects" | "Education";
 
@@ -48,10 +49,13 @@ function App() {
         <div className="gap-y-16">
           <AboutMe/>
           <Projects/>
-          <Education />
+          <Education/>
         </div>
       </section>
-      <Footer />
+      <Footer/>
+      <div className="absolute z-100 w-full h-full">
+        <DetailProject />
+      </div>
     </div>
   )
 }
