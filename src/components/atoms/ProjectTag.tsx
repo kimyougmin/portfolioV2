@@ -1,4 +1,4 @@
-interface ProjectTagProps {
+export interface ProjectTagProps {
   tags: string[];
 }
 function ProjectTag({tags}: ProjectTagProps) {

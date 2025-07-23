@@ -1,6 +1,6 @@
 export interface DetailCardProps {
   title: string;
-  description: string;
+  description: string[];
 }
 function DetailCard({title, description}: DetailCardProps) {
   return (
@@ -9,7 +9,11 @@ function DetailCard({title, description}: DetailCardProps) {
         <p className="text-left text-xl">{title}</p>
       </div>
       <div className="py-3 px-4">
-        <p className="text-left">{description}</p>
+        {description.map((item) => {
+          return (
+            <li className="text-left">{item}</li>
+          )
+        })}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import './App.css'
 import Intro from "./components/pages/Intro.tsx";
 import AboutMe from "./components/pages/AboutMe.tsx";
@@ -12,6 +12,7 @@ export type SectionType = "About Me" | "Projects" | "Education";
 
 function App() {
   const [selectedSection, setSelectedSection] = useState<SectionType>("About Me");
+  const [detailModal, setDetailModal] = React.useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +38,12 @@ function App() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const detailModalOpenHandler = (title: string) => {
+    setDetailModal(true);
+  }
+  const detailModalCloseHandler = () => {
+    setDetailModal(false);
+  }
   return (
     <div className="w-full">
       <Intro/>
@@ -48,14 +55,14 @@ function App() {
         </div>
         <div className="gap-y-16">
           <AboutMe/>
+          {detailModal && (<div className="absolute z-100 top-0 w-full h-full">
+            <DetailProject detailModalCloseHandler={detailModalCloseHandler}/>
+          </div>)}
           <Projects/>
           <Education/>
         </div>
       </section>
       <Footer/>
-      <div className="absolute z-100 w-full h-full">
-        <DetailProject />
-      </div>
     </div>
   )
 }
