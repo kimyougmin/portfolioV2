@@ -8,10 +8,13 @@ function DetailCard({title, description}: DetailCardProps) {
       <div className="bg-[#D9D9D9] py-2 px-4">
         <p className="text-left text-xl">{title}</p>
       </div>
-      <div className="py-3 px-4">
-        {description.map((item) => {
+      <div className="pt-4 px-4">
+        {description.map((item, index) => {
           return (
-            <li className="text-left">{item}</li>
+            <div key={`${title}-${index}`} className="flex mb-4">
+              <li className="text-left"></li>
+              <p className="text-left">{item}</p>
+            </div>
           )
         })}
       </div>
