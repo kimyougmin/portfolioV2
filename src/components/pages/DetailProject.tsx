@@ -9,6 +9,7 @@ interface DetailProjectProps {
 }
 function DetailProject({detailModalCloseHandler, dateSet}: DetailProjectProps) {
 
+
   return (
     <div className="w-full h-full px-24 py-8 bg-black bg-opacity-50 absolute top-0">
       <div className="w-full h-full rounded-md overflow-scroll bg-white">
