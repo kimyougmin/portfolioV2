@@ -31,7 +31,7 @@ function ProjectCard({ title, content, tags, image, detailModalOpenHandler }: Pr
           </p>
         </div>
       </div>
-      
+
       <div className="transition-opacity duration-300 hover:opacity-0">
         <img src={image} alt={title} className="rounded-sm w-full h-[210px] object-cover"/>
         <div className="mt-4 p-4">

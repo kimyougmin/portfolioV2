@@ -21,7 +21,7 @@ const DockBar = () => {
               {item.label}
             </div>
             <img
-              className="w-[72px] h-[72px] transition-transform duration-300 group-hover:scale-110"
+              className="w-[72px] h-[72px] transition-transform duration-300 group-hover:scale-110 hover:translate-y-[-12px]"
               src={item.src}
               alt={item.label}
             />
