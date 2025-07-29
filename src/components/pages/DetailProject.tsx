@@ -9,13 +9,21 @@ interface DetailProjectProps {
 }
 function DetailProject({detailModalCloseHandler, dateSet}: DetailProjectProps) {
 
-
   return (
-    <div className="w-full h-full px-24 py-8 bg-black bg-opacity-50 absolute top-0">
-      <div className="w-full h-full rounded-md overflow-scroll bg-white">
-        <div className="bg-[#CCDFFD] flex">
+    <div onClick={detailModalCloseHandler} className="w-full h-full sm:px-24 sm:py-8 p-0 bg-black bg-opacity-50 absolute top-0">
+      <div onClick={(e) => e.stopPropagation()} className="w-full h-full rounded-md overflow-scroll bg-white pb-8">
+        <div className="absolute top-4 right-4">
+          <div className="sticky top-0">
+            <div onClick={detailModalCloseHandler} className="rounded-full bg-[#DCDCDC] w-fit p-3 opacity-50">
+              <img src="/icons/Close.png" className="w-[24px] h-[24px]"/>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-[#CCDFFD] hidden sm:flex">
           <div className="flex gap-2 mx-4">
-            <div onClick={detailModalCloseHandler} className="w-[14px] h-[14px] bg-[#FD534F] my-auto rounded-full justify-items-center content-center">
+            <div onClick={detailModalCloseHandler}
+                 className="w-[14px] h-[14px] bg-[#FD534F] my-auto rounded-full justify-items-center content-center">
               <img src="/icons/Close.png" className="w-[8px] h-[8px]"/>
             </div>
             <div onClick={detailModalCloseHandler} className="w-[14px] h-[14px] bg-[#FCB53B] my-auto rounded-full justify-items-center content-center">
@@ -32,7 +40,7 @@ function DetailProject({detailModalCloseHandler, dateSet}: DetailProjectProps) {
           </div>
         </div>
 
-        <div className="bg-[#F7F7F7] flex h-[52px]">
+        <div className="bg-[#F7F7F7] hidden sm:flex h-[52px]">
           <img src="/controller.png" className="h-[18px] my-auto px-2"/>
           <div className="flex h-[32px] border border-[#323232] my-auto w-full rounded-full">
             <img src="/icons/check.png" className="w-[18px] h-[18px] my-auto mx-2"/>
@@ -41,7 +49,7 @@ function DetailProject({detailModalCloseHandler, dateSet}: DetailProjectProps) {
           <img src="/icons/setting.png" className="w-[55px] h-[18px] my-auto mx-6"/>
         </div>
 
-        <div className={`bg-[${dateSet.keyColor}] h-[258px] pt-10`}>
+        <div className="h-[258px] pt-10" style={{backgroundColor: dateSet.keyColor}}>
           <div className="mb-10">
             <p className="text-white text-5xl">{dateSet.title}</p>
             <p className="text-3xl">{dateSet.subtitle}</p>
@@ -66,7 +74,8 @@ function DetailProject({detailModalCloseHandler, dateSet}: DetailProjectProps) {
                 fill={dateSet.keyColor}/>
             </svg>
             <div className="relative -top-8">
-              <svg className="mx-auto" width="69" height="32" viewBox="0 0 69 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="mx-auto" width="69" height="32" viewBox="0 0 69 32" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_307_561)">
                   <path d="M48.5 8L47.6963 6.66667L34.5 12.7733L21.3037 6.66667L20.5 8L34.5 15L48.5 8Z" fill="#E8E8E8"/>
                   <path d="M49 17L47.6963 15.4533L34.5 21.56L21.3037 15.4533L20 17L34.5 24L49 17Z" fill="#E8E8E8"/>
@@ -80,7 +89,7 @@ function DetailProject({detailModalCloseHandler, dateSet}: DetailProjectProps) {
             </div>
           </div>
 
-          <div className="px-24 grid gap-12">
+          <div className="sm:px-24 px-4 grid gap-12">
             <div className="">
               <p className="text-black1">{dateSet.description}</p>
             </div>
@@ -107,7 +116,7 @@ function DetailProject({detailModalCloseHandler, dateSet}: DetailProjectProps) {
               <p className="text-left text-2xl font-bold mb-2">📚 프로젝트 기여도</p>
               <div className="grid gap-4">
                 {dateSet.projectContribution.map((item, index) => {
-                  return(
+                  return (
                     <DetailCard key={`${item.title}-${index}`} title={item.title} description={item.description}/>
                   )
                 })}
@@ -125,17 +134,16 @@ function DetailProject({detailModalCloseHandler, dateSet}: DetailProjectProps) {
               </div>
             </div>
 
-            <div>
+            <div className="pb-8">
               <p className="text-left text-2xl font-bold mb-2">🖥️ 프로젝트 이미지</p>
-              <div className="grid gap-4">
+              <div className="grid grid-cols-3 gap-6">
                 {dateSet.projectImages.map((item, index) => {
                   return (
-                    <img key={`${dateSet.title}img-${index}`} src={item}/>
+                    <img className="w-[240px] h-[155px] border" key={`${dateSet.title}img-${index}`} src={item}/>
                   )
                 })}
               </div>
             </div>
-
           </div>
         </div>
       </div>

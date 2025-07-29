@@ -50,8 +50,9 @@ function App() {
     document.body.style.overflow = 'hidden';
     document.body.style.width = '100%';
 
+    console.log(title)
     if (title === "돕당") setProjectDateSet(dopDang);
-    else if (title === "CoinAi") setProjectDateSet(coinAi);
+    else if (title === "CoinAI") setProjectDateSet(coinAi);
     else if (title === "RideOn") setProjectDateSet(rideOn);
     else if (title === "RealTimeChat") setProjectDateSet(realTimeChat);
     else if (title === "TextClassification API") setProjectDateSet(textClassification);
