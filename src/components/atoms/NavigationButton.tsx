@@ -1,4 +1,4 @@
-import type {SectionType} from "../../App.tsx";
+import type {SectionType} from "../../types/SectionType.ts";
 
 
 interface NavigationButtonProps {
