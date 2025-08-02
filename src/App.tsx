@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import './App.css';
 import Intro from "./components/pages/Intro.tsx";
 import AboutMe from "./components/pages/AboutMe.tsx";
 import NavigationBar from "./components/molecule/NavigationBar.tsx";
