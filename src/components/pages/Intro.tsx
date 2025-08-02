@@ -10,10 +10,18 @@ export default function Intro() {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      <div className="bg-[url('/main-bg.png')] bg-cover bg-center w-full h-full absolute pt-14">
-        <div className="flex gap-6 w-fit mb-10 mx-auto relative h-10">
-          <p className="text-xl font-bold underline hover:text-2xl">Blog</p>
-          <p className="text-xl font-bold underline hover:text-2xl">Github</p>
+      <div className="bg-[url('/main-bg.png')] bg-cover bg-center w-full h-full absolute pt-80">
+        <div className="flex gap-4 w-fit mb-4 mx-auto relative h-10 mt-52 pl-4 z-10">
+          <a  href={"https://hidden-front.tistory.com/"}
+              target="_blank"
+              rel="noopener noreferrer">
+            <p className="text-xl font-bold underline hover:text-2xl cursor-pointer">Blog</p>
+          </a>
+          <a href={"https://github.com/kimyougmin"}
+             target="_blank"
+             rel="noopener noreferrer">
+            <p className="text-xl font-bold underline hover:text-2xl cursor-pointer">Github</p>
+          </a>
         </div>
         <div
           className={`mb-12 transition-all duration-700 ease-out transform ${
@@ -33,10 +41,10 @@ export default function Intro() {
           맡은 일은 끝까지 책임지고 완성도 높게 마무리하겠습니다.
         </p>
 
-        <div className="absolute bottom-0 w-full flex justify-center">
+        <div className="absolute top-0 w-full flex justify-center">
           <img
             className="h-[calc(90vh-40vh)] transition-all max-sm:h-[calc(90vh-40vh)]"
-            src="/person.png"
+            src="/chandelier.png"
             alt="김영민"
           />
         </div>

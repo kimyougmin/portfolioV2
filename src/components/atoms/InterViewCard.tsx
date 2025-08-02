@@ -4,7 +4,7 @@ interface InterViewCardProps {
 }
 function InterViewCard({title, description}: InterViewCardProps) {
   return (
-    <div className="bg-[#545454] rounded-2xl p-8">
+    <div className="bg-[#545454] rounded-2xl p-8 mb-4">
       <p className="text-left text-white font-bold text-3xl mb-2">{title}</p>
       <p className="text-left text-white text-10">{description}</p>
     </div>
