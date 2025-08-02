@@ -3,7 +3,7 @@ import type {SkillType} from "../../types/SkillType.ts";
 function SkillIcon({type, color}: SkillType) {
   return (
     <div className={`rounded-lg justify-items-center content-center w-[70px] h-[70px] `} style={{backgroundColor: color}}>
-      <img src={`/public/skillIcons/${type}.png`} />
+      <img src={`/skillIcons/${type}.png`} />
     </div>
   );
 }

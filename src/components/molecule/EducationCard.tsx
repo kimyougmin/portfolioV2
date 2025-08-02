@@ -14,7 +14,7 @@ function EducationCard({title, description, period, content}: EducationCard) {
         <p key={idx} className="text-left text-white text-sm mb-2">{item}</p>
       ))}
       <img
-        src={title === "동서대학교"? "/public/university.png": "/public/prgrms.png"}
+        src={title === "동서대학교"? "/university.png": "/prgrms.png"}
         alt="프로그래머스 로고"
         className="mt-10 w-auto max-w-[150px] h-auto"
       />
