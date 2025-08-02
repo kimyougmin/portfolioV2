@@ -1,7 +1,7 @@
 const items = [
-  { src: "/public/icons/mail.png", label: "Email", href: "mailto:dudals89@gmail.com" },
-  { src: "/public/icons/github.png", label: "GitHub", href: "https://github.com/kimyougmin" },
-  { src: "/public/icons/tstory.png", label: "Blog", href: "https://hidden-front.tistory.com/" },
+  { src: "/icons/mail.png", label: "Email", href: "mailto:dudals89@gmail.com" },
+  { src: "/icons/github.png", label: "GitHub", href: "https://github.com/kimyougmin" },
+  { src: "/icons/tstory.png", label: "Blog", href: "https://hidden-front.tistory.com/" },
 ];
 
 
