@@ -139,7 +139,7 @@ function DetailProject({detailModalCloseHandler, dateSet}: DetailProjectProps) {
               <div className="grid grid-cols-3 gap-6">
                 {dateSet.projectImages.map((item, index) => {
                   return (
-                    <img className="w-[240px] h-[155px] border" key={`${dateSet.title}img-${index}`} src={item}/>
+                    <img className=" border" key={`${dateSet.title}img-${index}`} src={item}/>
                   )
                 })}
               </div>

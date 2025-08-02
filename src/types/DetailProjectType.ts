@@ -3,7 +3,7 @@ import type {DetailCardProps} from "../components/molecule/DetailCard.tsx";
 import type {ProjectTagProps} from "../components/atoms/ProjectTag.tsx";
 
 export interface DetailProjectType {
-  keyColor: "#5D99FF" | "#DC3644" | "#FFC95D" | "#9B5DFF" | "#5DFF83";
+  keyColor: "#5D99FF" | "#DC3644" | "#FFC95D" | "#9B5DFF" | "#42FF6E";
   title: string;
   subtitle: string;
   period: string;
@@ -112,11 +112,11 @@ export const rideOn: DetailProjectType = {
     }
   ],
   projectImages: [
-    "/public/projectImage/rideon/rideon1.png",
-    "/public/projectImage/rideon/rideon2.png",
-    "/public/projectImage/rideon/rideon3.png",
-    "/public/projectImage/rideon/rideon4.png",
-    "/public/projectImage/rideon/rideon5.png"
+    "/projectImage/rideon/rideon1.png",
+    "/projectImage/rideon/rideon4.png",
+    "/projectImage/rideon/rideon5.png",
+    "/projectImage/rideon/rideon2.png",
+    "/projectImage/rideon/rideon3.png"
   ]
 };
 
@@ -174,8 +174,8 @@ export const coinAi: DetailProjectType = {
     }
   ],
   projectImages: [
-    "/public/projectImage/coinai/coinai1.png",
-    "/public/projectImage/coinai/coinai2.png",
+    "/projectImage/coinAI/coinai1.png",
+    "/projectImage/coinAI/coinai2.png",
   ]
 }
 
@@ -231,15 +231,12 @@ export const realTimeChat: DetailProjectType = {
     }
   ],
   projectImages: [
-    "/public/projectImage/realtimechat/chat1.png",
-    "/public/projectImage/realtimechat/chat2.png",
-    "/public/projectImage/realtimechat/chat3.png",
-    "/public/projectImage/realtimechat/chat4.png"
+    "/projectImage/realTimeChat/realtimechat.png",
   ]
 };
 
 export const textClassification: DetailProjectType = {
-  keyColor: "#5DFF83",
+  keyColor: "#42FF6E",
   title: "TextClassification API",
   subtitle: "욕설·비속어 필터링 API 서비스",
   period: "2024.3 ~ 2024.06",
@@ -267,26 +264,34 @@ export const textClassification: DetailProjectType = {
       ]
     },
     {
-      title: "LLM fine-tuning",
+      title: "비속어 감지 시스템 설계 및 구현",
       description: [
-        "모델을 전이 학습하여 4가지의 분류로 욕설 및 비속어를 분류",
+        "KoBERT 기반의 텍스트 분류 모델을 활용하여 채팅 메시지 내 비속어 여부를 판단",
+        "FastAPI로 모델 추론 API 서버를 구성하고, 프론트엔드에서 비속어 검출 시 전송 차단 또는 경고 메시지 표시",
+        "로컬 테스트 및 배포 환경에서 예측 정확도 검증 및 실시간 응답 성능 개선"
       ]
     }
   ],
   troubleshooting: [
     {
-      title: "비속어 탐지 정확도 문제",
+      title: "HuggingFace KoBERT 모델의 환경 종속성과 빌드 실패 문제",
       description: [
-        "[문제 상황]: 클라이언트에서 테스트 중 일부 비속어가 필터링되지 않거나, 정상 문장이 오탐지되는 현상 발생",
-        "[해결 과정]: AI 팀과 협업해 욕설 사전 기반 룰 필터링과 함께 FastText 임베딩 기반의 의미 유사도 탐지 로직을 병행 적용",
-        "[결과]: 비속어 탐지 정확도 91% → 97%로 향상, 오탐지율은 35% 감소"
+        "[문제 상황]: KoBERT 모델을 Vercel에 배포하려 했지만, MXNet 및 GluonNLP 등 과거 패키지와의 버전 충돌로 빌드 실패",
+        "[해결 과정]: 모델 추론 서버를 Vercel이 아닌 GPU 지원 가능한 서버(예: Colab, EC2)로 옮기고, FastAPI + Ngrok으로 외부 호출 가능하게 구성",
+        "[회고]: Vercel은 서버리스 환경이므로 무거운 모델보다는 경량화된 모델이나 외부 서버와의 연동 구조가 더 적합하다는 인사이트를 얻었고, 향후 모델 경량화 및 ONNX 변환도 고려할 계획"
       ]
     },
+    {
+      title: "모델 정확도와 실시간 응답 속도 간의 균형 문제",
+      description: [
+        "[문제 상황]: 실시간 메시지 검열 과정에서 모델 추론 속도가 느려 UX가 저하되는 이슈 발생",
+        "[해결 과정]: API 응답 시간을 줄이기 위해 예측에 필요한 전처리 및 토크나이저 작업을 서버 시작 시 미리 캐싱, 예측 함수 최적화",
+        "[결과]: 사용자 전송 시 0.3초 내 응답 제공, 실시간성 확보와 동시에 모델 정확도도 유지"
+      ]
+    }
   ],
   projectImages: [
-    "/public/projectImage/textclean/textclean1.png",
-    "/public/projectImage/textclean/textclean2.png",
-    "/public/projectImage/textclean/textclean3.png"
+    "/textClassifier.png",
   ]
 };
 
