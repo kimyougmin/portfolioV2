@@ -2,13 +2,24 @@ import ProjectTag from "../atoms/ProjectTag.tsx";
 import SkillsDescription from "../molecule/SkillsDescription.tsx";
 import DetailCard from "../molecule/DetailCard.tsx";
 import type {DetailProjectType} from "../../types/DetailProjectType.ts";
+import {useState} from "react";
+import ImageDetailModal from "../molecule/ImageDetailModal.tsx";
 
 interface DetailProjectProps {
   detailModalCloseHandler: () => void;
   dateSet: DetailProjectType;
 }
 function DetailProject({detailModalCloseHandler, dateSet}: DetailProjectProps) {
+  const [isImageModal, setIsImageModal] = useState(false);
+  const [imageUrl, setImageUrl] = useState<string>("");
 
+  const imageModalHandler = (imageUrl: string) => {
+    setIsImageModal(true);
+    setImageUrl(imageUrl);
+  }
+  const imageModalCloseHandler = () => {
+    setIsImageModal(false);
+  }
   return (
     <div onClick={detailModalCloseHandler} className="w-full h-full sm:px-24 sm:py-8 p-0 bg-black bg-opacity-50 absolute top-0">
       <div onClick={(e) => e.stopPropagation()} className="w-full h-full rounded-md overflow-scroll bg-white pb-8">
@@ -139,11 +150,12 @@ function DetailProject({detailModalCloseHandler, dateSet}: DetailProjectProps) {
               <div className="grid grid-cols-3 gap-6">
                 {dateSet.projectImages.map((item, index) => {
                   return (
-                    <img className=" border" key={`${dateSet.title}img-${index}`} src={item}/>
+                    <img onClick={() => imageModalHandler(item)} className="cursor-pointer border" key={`${dateSet.title}img-${index}`} src={item}/>
                   )
                 })}
               </div>
             </div>
+            {isImageModal && <ImageDetailModal image={imageUrl} imageModalCloseHandler={imageModalCloseHandler}/>}
           </div>
         </div>
       </div>
