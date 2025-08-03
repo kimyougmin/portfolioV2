@@ -58,7 +58,12 @@ export const dopDang: DetailProjectType = {
       "[해결 과정]: AWS S3를 활용한 이미지 업로드 서비스 구축 위해 백엔드 API와 연동하고 업로드 시점에서 낭비되는 자원을 아끼기 위해 압축과 가벼운 webP로 확장자 변경 -> URL 특정 -> 이미지 업로드 3단계로 함수를 나누어 이미지 업로드 함수 제작",
       "[결과]: S3 업로드로 외부 의존도를 줄이고 이미지 리사이징 자동화까지 가능해져 관리 편의성 확보"]
     }],
-  projectImages: ["/public/projectImage/dopdang/dopdang1.png","/public/projectImage/dopdang/dopdang2.png","/public/projectImage/dopdang/dopdang3.png","/public/projectImage/dopdang/dopdang4.png", "/public/projectImage/dopdang/dopdang5.png"]
+  projectImages: [
+    "/projectImage/dopdang/dopdang1.png",
+    "/projectImage/dopdang/dopdang2.png",
+    "/projectImage/dopdang/dopdang3.png",
+    "/projectImage/dopdang/dopdang4.png",
+    "/projectImage/dopdang/dopdang5.png"]
 }
 
 export const rideOn: DetailProjectType = {
